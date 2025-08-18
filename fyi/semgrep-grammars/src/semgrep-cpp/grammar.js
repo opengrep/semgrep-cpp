@@ -9,6 +9,10 @@ const base_grammar = require('tree-sitter-cpp/grammar');
 module.exports = grammar(base_grammar, {
   name: 'cpp',
 
+  extras: ($, previous) => previous.concat([
+    $.preproc_conditional
+  ]),
+
   conflicts: ($, previous) => previous.concat([
       // C++ allows 'sizeof ...(id)' hence the conflict
       [$.sizeof_expression, $.semgrep_ellipsis],
@@ -27,6 +31,12 @@ module.exports = grammar(base_grammar, {
       previous,
       $.semgrep_expression
     ),
+
+    // Added for the bloody preprocessor stuff.
+    preproc_conditional: _ =>
+      token(seq('#', choice('if', 'ifdef', 'ifndef', 'elif', 'else', 'endif'),
+                /(\\+(.|\r?\n)|[^\\\n])*/)),
+
 
     // Alternate "entry point". Allows parsing a standalone expression.
     semgrep_expression: $ => seq('__SEMGREP_EXPRESSION', $._expression),
