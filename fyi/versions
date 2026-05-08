@@ -2,11 +2,11 @@ File: semgrep-grammars/src/tree-sitter-c/LICENSE
 Git repo name: tree-sitter-c
 Latest commit in repo: ecdd500806cf8154d944344f1df6418b32e0e9a7
 Last change in file:
-  commit ecdd500806cf8154d944344f1df6418b32e0e9a7
-  Author: Brandon Wu <49291449+brandonspark@users.noreply.github.com>
-  Date:   Fri Jan 26 12:20:17 2024 -0800
+  commit af2904ca831cbb33cdc3bb7bacc2ed9840bd0a3c
+  Author: Max Brunsfeld <maxbrunsfeld@gmail.com>
+  Date:   Fri Sep 5 23:53:51 2014 -0700
   
-      fix: properly suffix elifdef
+      Initial commit
 ---
 File: semgrep-grammars/src/tree-sitter-c/grammar.js
 Git repo name: tree-sitter-c
@@ -20,17 +20,17 @@ Last change in file:
 ---
 File: semgrep-grammars/src/tree-sitter-cpp/LICENSE
 Git repo name: tree-sitter-cpp
-Latest commit in repo: 4ca37be8e70e5a40ae95688bec56b886ba945888
+Latest commit in repo: 8b983de2532e123600f4cf94d57c6058d5909ace
 Last change in file:
-  commit 4ca37be8e70e5a40ae95688bec56b886ba945888
-  Author: Brandon Wu <49291449+brandonspark@users.noreply.github.com>
-  Date:   Fri Jan 26 08:33:26 2024 -0800
+  commit d8966822015417d060ffaafd95a71a49dd28ec99
+  Author: Max Brunsfeld <maxbrunsfeld@gmail.com>
+  Date:   Fri Jan 15 11:04:19 2016 -0800
   
-      disambiguate fold vs parenthesized assignment (#239)
+      Initial commit
 ---
 File: semgrep-grammars/src/tree-sitter-cpp/grammar.js
 Git repo name: tree-sitter-cpp
-Latest commit in repo: 4ca37be8e70e5a40ae95688bec56b886ba945888
+Latest commit in repo: 8b983de2532e123600f4cf94d57c6058d5909ace
 Last change in file:
   commit 4ca37be8e70e5a40ae95688bec56b886ba945888
   Author: Brandon Wu <49291449+brandonspark@users.noreply.github.com>
@@ -40,11 +40,13 @@ Last change in file:
 ---
 File: semgrep-grammars/src/semgrep-cpp/grammar.js
 Git repo name: ocaml-tree-sitter-semgrep
-Latest commit in repo: d477029b3a840b89bb31ba307c950dac53811252
+Latest commit in repo: 8e856b97e47032aba104c7337c354db8b33d103d
 Last change in file:
-  commit 5f3836d894376e97f7582fd32c2bd01b98697886
-  Author: brandonspark <wu.brandonj@gmail.com>
-  Date:   Mon Jan 29 15:03:38 2024 -0800
+  commit 227dda04b6268765ff74077f1b8a85044acd3ab2
+  Author: Dimitris Mostrous <dimitris.mostrous+aikido@gmail.com>
+  Date:   Mon Aug 18 16:59:41 2025 +0100
   
-      remove redundant choice
+      ignore some C / C++ preprocessor directives
+      
+      This is to reduce errors and be able to obtain results...
 ---

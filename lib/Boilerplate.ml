@@ -50,6 +50,9 @@ let map_type_qualifier (env : env) (x : CST.type_qualifier) =
       | `Nore tok -> R.Case ("Nore",
           (* "noreturn" *) token env tok
         )
+      | `G_auto tok -> R.Case ("G_auto",
+          (* "g_autofree" *) token env tok
+        )
       )
     )
   | `Muta tok -> R.Case ("Muta",
