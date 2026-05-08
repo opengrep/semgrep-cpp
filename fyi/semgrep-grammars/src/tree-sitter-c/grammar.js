@@ -534,6 +534,8 @@ module.exports = grammar({
       '_Atomic',
       '_Noreturn',
       'noreturn',
+      // glibext: GLib attribute-like macros used as declaration qualifiers
+      'g_autofree',
     ),
 
     _type_specifier: $ => choice(

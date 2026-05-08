@@ -20,7 +20,6 @@ type mt = Run.matcher_token
 external create_parser :
   unit -> Tree_sitter_API.ts_parser = "octs_create_parser_cpp"
 
-(* NOTE: Ok because we run one target per domain at any 1 time. *)
 let ts_parser = Domain.DLS.new_key create_parser
 
 let parse_source_string ?src_file contents =
@@ -175,6 +174,7 @@ let children_regexps : (string * Run.exp option) list = [
         Token (Literal "_Atomic");
         Token (Literal "_Noreturn");
         Token (Literal "noreturn");
+        Token (Literal "g_autofree");
       |];
       Token (Literal "mutable");
       Token (Literal "constinit");
@@ -5244,6 +5244,10 @@ let trans_type_qualifier ((kind, body) : mt) : CST.type_qualifier =
                 )
             | Alt (8, v) ->
                 `Nore (
+                  Run.trans_token (Run.matcher_token v)
+                )
+            | Alt (9, v) ->
+                `G_auto (
                   Run.trans_token (Run.matcher_token v)
                 )
             | _ -> assert false

@@ -19,6 +19,7 @@ type type_qualifier = [
       | `X__Atomic of Token.t (* "_Atomic" *)
       | `X__Nore of Token.t (* "_Noreturn" *)
       | `Nore of Token.t (* "noreturn" *)
+      | `G_auto of Token.t (* "g_autofree" *)
     ]
   | `Muta of Token.t (* "mutable" *)
   | `Cons_36fe86c of Token.t (* "constinit" *)
